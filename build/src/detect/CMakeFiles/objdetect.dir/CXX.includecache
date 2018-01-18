@@ -6,14 +6,16 @@
 
 #IncludeRegexTransform: 
 
-/Users/Double/workspace/Machine Learning/tutorial/detect_one/src/objectDetection.cpp
-opencv2/objdetect.hpp
-/Users/Double/workspace/Machine Learning/tutorial/detect_one/src/opencv2/objdetect.hpp
-opencv2/highgui.hpp
-/Users/Double/workspace/Machine Learning/tutorial/detect_one/src/opencv2/highgui.hpp
-opencv2/imgproc.hpp
-/Users/Double/workspace/Machine Learning/tutorial/detect_one/src/opencv2/imgproc.hpp
+/Users/Double/workspace/Machine Learning/tutorial/detect_one/src/detect/detect.cpp
+iostream
+-
 stdio.h
+-
+opencv2/objdetect.hpp
+-
+opencv2/highgui.hpp
+-
+opencv2/imgproc.hpp
 -
 
 /usr/local/include/opencv/cxcore.h

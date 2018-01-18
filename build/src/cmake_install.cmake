@@ -1,4 +1,4 @@
-# Install script for directory: /Users/Double/Documents/workspace/Machine Learning/tutorial/detect_one/src
+# Install script for directory: /Users/Double/workspace/Machine Learning/tutorial/detect_one/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -30,5 +30,12 @@ endif()
 # Is this installation the result of a crosscompile?
 if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for each subdirectory.
+  include("/Users/Double/workspace/Machine Learning/tutorial/detect_one/build/src/detect/cmake_install.cmake")
+  include("/Users/Double/workspace/Machine Learning/tutorial/detect_one/build/src/detect_train/cmake_install.cmake")
+
 endif()
 

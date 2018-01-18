@@ -1,4 +1,4 @@
-# Install script for directory: /Users/Double/workspace/Machine Learning/tutorial/detect_one/lib
+# Install script for directory: /Users/Double/workspace/Machine Learning/tutorial/detect_one/src/detect
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

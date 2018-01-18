@@ -48,10 +48,10 @@ RM = /usr/local/Cellar/cmake/3.10.1/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/Double/Documents/workspace/Machine Learning/tutorial/detect_one"
+CMAKE_SOURCE_DIR = "/Users/Double/workspace/Machine Learning/tutorial/detect_one"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/Double/Documents/workspace/Machine Learning/tutorial/detect_one/build"
+CMAKE_BINARY_DIR = "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd "/Users/Double/Documents/workspace/Machine Learning/tutorial/detect_one/build" && $(CMAKE_COMMAND) -E cmake_progress_start "/Users/Double/Documents/workspace/Machine Learning/tutorial/detect_one/build/CMakeFiles" "/Users/Double/Documents/workspace/Machine Learning/tutorial/detect_one/build/src/CMakeFiles/progress.marks"
-	cd "/Users/Double/Documents/workspace/Machine Learning/tutorial/detect_one/build" && $(MAKE) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/Double/Documents/workspace/Machine Learning/tutorial/detect_one/build/CMakeFiles" 0
+	cd "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build" && $(CMAKE_COMMAND) -E cmake_progress_start "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build/CMakeFiles" "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build/src/CMakeFiles/progress.marks"
+	cd "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build" && $(MAKE) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd "/Users/Double/Documents/workspace/Machine Learning/tutorial/detect_one/build" && $(MAKE) -f CMakeFiles/Makefile2 src/clean
+	cd "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build" && $(MAKE) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd "/Users/Double/Documents/workspace/Machine Learning/tutorial/detect_one/build" && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build" && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd "/Users/Double/Documents/workspace/Machine Learning/tutorial/detect_one/build" && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build" && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd "/Users/Double/Documents/workspace/Machine Learning/tutorial/detect_one/build" && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build" && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/detect.dir/rule:
-	cd "/Users/Double/Documents/workspace/Machine Learning/tutorial/detect_one/build" && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/detect.dir/rule
+	cd "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build" && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/detect.dir/rule
 .PHONY : src/CMakeFiles/detect.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ detect: src/CMakeFiles/detect.dir/rule
 
 # fast build rule for target.
 detect/fast:
-	cd "/Users/Double/Documents/workspace/Machine Learning/tutorial/detect_one/build" && $(MAKE) -f src/CMakeFiles/detect.dir/build.make src/CMakeFiles/detect.dir/build
+	cd "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build" && $(MAKE) -f src/CMakeFiles/detect.dir/build.make src/CMakeFiles/detect.dir/build
 .PHONY : detect/fast
 
 objectDetection.o: objectDetection.cpp.o
@@ -131,7 +131,7 @@ objectDetection.o: objectDetection.cpp.o
 
 # target to build an object file
 objectDetection.cpp.o:
-	cd "/Users/Double/Documents/workspace/Machine Learning/tutorial/detect_one/build" && $(MAKE) -f src/CMakeFiles/detect.dir/build.make src/CMakeFiles/detect.dir/objectDetection.cpp.o
+	cd "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build" && $(MAKE) -f src/CMakeFiles/detect.dir/build.make src/CMakeFiles/detect.dir/objectDetection.cpp.o
 .PHONY : objectDetection.cpp.o
 
 objectDetection.i: objectDetection.cpp.i
@@ -140,7 +140,7 @@ objectDetection.i: objectDetection.cpp.i
 
 # target to preprocess a source file
 objectDetection.cpp.i:
-	cd "/Users/Double/Documents/workspace/Machine Learning/tutorial/detect_one/build" && $(MAKE) -f src/CMakeFiles/detect.dir/build.make src/CMakeFiles/detect.dir/objectDetection.cpp.i
+	cd "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build" && $(MAKE) -f src/CMakeFiles/detect.dir/build.make src/CMakeFiles/detect.dir/objectDetection.cpp.i
 .PHONY : objectDetection.cpp.i
 
 objectDetection.s: objectDetection.cpp.s
@@ -149,7 +149,7 @@ objectDetection.s: objectDetection.cpp.s
 
 # target to generate assembly for a file
 objectDetection.cpp.s:
-	cd "/Users/Double/Documents/workspace/Machine Learning/tutorial/detect_one/build" && $(MAKE) -f src/CMakeFiles/detect.dir/build.make src/CMakeFiles/detect.dir/objectDetection.cpp.s
+	cd "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build" && $(MAKE) -f src/CMakeFiles/detect.dir/build.make src/CMakeFiles/detect.dir/objectDetection.cpp.s
 .PHONY : objectDetection.cpp.s
 
 # Help Target
@@ -175,6 +175,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd "/Users/Double/Documents/workspace/Machine Learning/tutorial/detect_one/build" && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build" && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

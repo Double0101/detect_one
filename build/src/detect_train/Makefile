@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build" && $(CMAKE_COMMAND) -E cmake_progress_start "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build/CMakeFiles" "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build/lib/CMakeFiles/progress.marks"
-	cd "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build" && $(MAKE) -f CMakeFiles/Makefile2 lib/all
+	cd "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build" && $(CMAKE_COMMAND) -E cmake_progress_start "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build/CMakeFiles" "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build/src/detect_train/CMakeFiles/progress.marks"
+	cd "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build" && $(MAKE) -f CMakeFiles/Makefile2 src/detect_train/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build" && $(MAKE) -f CMakeFiles/Makefile2 lib/clean
+	cd "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build" && $(MAKE) -f CMakeFiles/Makefile2 src/detect_train/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,12 +97,12 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build" && $(MAKE) -f CMakeFiles/Makefile2 lib/preinstall
+	cd "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build" && $(MAKE) -f CMakeFiles/Makefile2 src/detect_train/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build" && $(MAKE) -f CMakeFiles/Makefile2 lib/preinstall
+	cd "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build" && $(MAKE) -f CMakeFiles/Makefile2 src/detect_train/preinstall
 .PHONY : preinstall/fast
 
 # clear depends

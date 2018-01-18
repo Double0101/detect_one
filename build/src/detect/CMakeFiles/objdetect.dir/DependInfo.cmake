@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/Double/workspace/Machine Learning/tutorial/detect_one/src/objectDetection.cpp" "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build/src/CMakeFiles/detect.dir/objectDetection.cpp.o"
+  "/Users/Double/workspace/Machine Learning/tutorial/detect_one/src/detect/detect.cpp" "/Users/Double/workspace/Machine Learning/tutorial/detect_one/build/src/detect/CMakeFiles/objdetect.dir/detect.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 
