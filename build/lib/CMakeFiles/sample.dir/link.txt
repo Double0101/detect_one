@@ -1,2 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/ar qc libsample.a  CMakeFiles/sample.dir/sample.cpp.o
-/Library/Developer/CommandLineTools/usr/bin/ranlib libsample.a
