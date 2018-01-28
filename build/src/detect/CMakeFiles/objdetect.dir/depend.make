@@ -77,6 +77,7 @@ src/detect/CMakeFiles/objdetect.dir/detect.cpp.o: /usr/local/include/opencv2/img
 src/detect/CMakeFiles/objdetect.dir/detect.cpp.o: /usr/local/include/opencv2/imgproc/imgproc_c.h
 src/detect/CMakeFiles/objdetect.dir/detect.cpp.o: /usr/local/include/opencv2/imgproc/types_c.h
 src/detect/CMakeFiles/objdetect.dir/detect.cpp.o: /usr/local/include/opencv2/ml.hpp
+src/detect/CMakeFiles/objdetect.dir/detect.cpp.o: /usr/local/include/opencv2/ml/ml.inl.hpp
 src/detect/CMakeFiles/objdetect.dir/detect.cpp.o: /usr/local/include/opencv2/objdetect.hpp
 src/detect/CMakeFiles/objdetect.dir/detect.cpp.o: /usr/local/include/opencv2/objdetect/detection_based_tracker.hpp
 src/detect/CMakeFiles/objdetect.dir/detect.cpp.o: /usr/local/include/opencv2/objdetect/objdetect_c.h

@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/sample.hpp
+vector
+-
+string
+-
+
+/Users/Double/workspace/Machine Learning/tutorial/detect_one/lib/sample.cpp
+iostream
+-
+sstream
+-
+sample.hpp
+/Users/Double/workspace/Machine Learning/tutorial/detect_one/lib/sample.hpp
+

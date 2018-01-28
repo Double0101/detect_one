@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/objdetect.dir/detect.cpp.o"
-  "objdetect.pdb"
-  "objdetect"
+  "../../bin/objdetect.pdb"
+  "../../bin/objdetect"
 )
 
 # Per-language clean rules from dependency scanning.
