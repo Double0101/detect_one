@@ -55,27 +55,22 @@ void detectAndDisplay(Mat& frame)
 int checkColor(Mat& frame)
 {
     int count = 0;
-    Mat hsv_img;
-    hsv_img.create( frame.size(), frame.type() );
-    cvtColor( frame, hsv_img, CV_BGR2HSV );
     vector<Mat> channels;
-    split( hsv_img, channels );
+    split( frame, channels );
 
     int num_row = frame.rows;
     int num_col = frame.cols;
 
     for (int r = 0; r < num_row; ++r)
     {
-        const uchar* r_hue = channels[0].ptr<const uchar>(r);
-        const uchar* r_satur = channels[1].ptr<const uchar>(r);
-        const uchar* r_value = channels[2].ptr<const uchar>(r);
+        const uchar* r_b = channels[0].ptr<const uchar>(r);
+        const uchar* r_g = channels[1].ptr<const uchar>(r);
+        const uchar* r_r = channels[2].ptr<const uchar>(r);
         for (int c = 0; c < num_col; ++c)
-            if ( r_hue[c] >= 100 && r_hue[c] <= 124
-                 && r_satur[c] >= 43 && r_satur[c] <= 255
-                 && r_value[c] >= 46 && r_value[c] <= 255 )
+            if ( r_g[c] + 2 * r_r[c] <= 2 * r_b[c] )
                 ++count;
     }
-    return ( (float) count / ( num_col * num_row ) > 0.11f ) ? 1 : 0;
+    return ( (float) count / ( num_col * num_row ) > 0.09f ) ? 1 : 0;
 }
 
 void detect(Mat frame, Mat& frame_gray, int flags)
