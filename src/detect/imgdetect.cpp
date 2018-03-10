@@ -55,20 +55,36 @@ void detectAndDisplay(Mat& frame)
 int checkColor(Mat& frame)
 {
     int count = 0;
-    vector<Mat> channels;
-    split( frame, channels );
-
+    uchar* pVec = frame.ptr<uchar>(0);
     int num_row = frame.rows;
     int num_col = frame.cols;
 
     for (int r = 0; r < num_row; ++r)
     {
-        const uchar* r_b = channels[0].ptr<const uchar>(r);
-        const uchar* r_g = channels[1].ptr<const uchar>(r);
-        const uchar* r_r = channels[2].ptr<const uchar>(r);
-        for (int c = 0; c < num_col; ++c)
-            if ( r_g[c] + 2 * r_r[c] <= 2 * r_b[c] )
-                ++count;
+        pVec = frame.ptr<uchar>(r);
+        for (int c = 0; c < num_col * frame.channels(); c = c + frame.channels())
+        {
+            uchar pmax = max(pVec[c], pVec[c + 1], pVec[c + 2]);
+            uchar pmin = min(pVec[c], pVec[c + 1], pVec[c + 2]);
+            uchar v = pmax, s, h;
+            uchar delta = pmax - pmin;
+            if ( pmax != 0 ) s = delta / pmax;
+            else
+            {
+                s = 0;
+                h = -1;
+            }
+            if ( pmax == pVec[c + 2] )
+                h = ( pVec[c + 1] - pVec[c] ) / delta;
+            else if ( pmax == pVec[c + 1] )
+                h = 2 + ( pVec[c] - pVec[c + 2] ) / delta;
+            else
+                h = 4 + ( pVec[c + 2] - pVec[c] ) / delta;
+
+            h *= 60;
+            if ( h < 0 )
+                h += 360;
+        }
     }
     return ( (float) count / ( num_col * num_row ) > 0.09f ) ? 1 : 0;
 }
