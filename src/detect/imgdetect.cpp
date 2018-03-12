@@ -9,6 +9,7 @@ using namespace cv;
 int checkColor(Mat& frame);
 void detectAndDisplay(Mat& frame);
 void detect(Mat frame, Mat& frame_gray, int flags);
+int getAveLightness(Mat& frame);
 
 CascadeClassifier obj_cascade;
 
@@ -55,38 +56,9 @@ void detectAndDisplay(Mat& frame)
 int checkColor(Mat& frame)
 {
     int count = 0;
-    uchar* pVec = frame.ptr<uchar>(0);
-    int num_row = frame.rows;
-    int num_col = frame.cols;
 
-    for (int r = 0; r < num_row; ++r)
-    {
-        pVec = frame.ptr<uchar>(r);
-        for (int c = 0; c < num_col * frame.channels(); c = c + frame.channels())
-        {
-            uchar pmax = max(pVec[c], pVec[c + 1], pVec[c + 2]);
-            uchar pmin = min(pVec[c], pVec[c + 1], pVec[c + 2]);
-            uchar v = pmax, s, h;
-            uchar delta = pmax - pmin;
-            if ( pmax != 0 ) s = delta / pmax;
-            else
-            {
-                s = 0;
-                h = -1;
-            }
-            if ( pmax == pVec[c + 2] )
-                h = ( pVec[c + 1] - pVec[c] ) / delta;
-            else if ( pmax == pVec[c + 1] )
-                h = 2 + ( pVec[c] - pVec[c + 2] ) / delta;
-            else
-                h = 4 + ( pVec[c + 2] - pVec[c] ) / delta;
 
-            h *= 60;
-            if ( h < 0 )
-                h += 360;
-        }
-    }
-    return ( (float) count / ( num_col * num_row ) > 0.09f ) ? 1 : 0;
+    return 0;
 }
 
 void detect(Mat frame, Mat& frame_gray, int flags)
@@ -127,4 +99,10 @@ void detect(Mat frame, Mat& frame_gray, int flags)
     }
 
     imshow(window_name, frame);
+}
+int getAveLightness(Mat& frame_gray)
+{
+
+
+    return 0;
 }
