@@ -2,31 +2,30 @@
 #include <cstdio>
 
 #include <opencv2/opencv.hpp>
-
+#include "bmwfilter.hpp"
 using namespace std;
 using namespace cv;
 
-int checkColor(Mat& frame);
 void detectAndDisplay(Mat& frame);
 void detect(Mat frame, Mat& frame_gray, int flags);
-int getAveLightness(Mat& frame);
 
 CascadeClassifier obj_cascade;
 
 string window_name = "image detect";
-string obj_classifier_name = "/Users/Double/workspace/Projects/cheguo/detect_one/build/bin/data/cascade.xml";
+string obj_classifier_name = "/Users/Double/workspace/Projects/cheguo/dataset/re/data/rotate/model2/cascade.xml";
 
 const int DETECTWITHCOLOR = 1;
 
 int main(int argc, const char** argv)
 {
-    Mat src = imread( argv[1], 1 );
+    Mat src = imread( "/Users/Double/Desktop/4272-合影.jpg"/*argv[1]*/, 1 );
     if ( argc > 2 ) { obj_classifier_name = argv[2]; }
     if ( !obj_cascade.load( obj_classifier_name ) ) { printf("--(!)Error loading cascade\n"); return -1; }
 
 	// TODO scale frame
-	double scale = min(1000.f / src.cols, 1000.f / src.rows);
-	resize(src, src, Size(src.cols * scale, src.rows * scale));
+	double scale = min( 1000.f / src.cols, 1000.f / src.rows);
+    cout << scale << endl;
+	resize( src, src, Size( src.cols * scale, src.rows * scale));
     detectAndDisplay( src );
     return 0;
 }
@@ -53,14 +52,6 @@ void detectAndDisplay(Mat& frame)
     waitKey(0);
 }
 
-int checkColor(Mat& frame)
-{
-    int count = 0;
-
-
-    return 0;
-}
-
 void detect(Mat frame, Mat& frame_gray, int flags)
 {
     vector<Rect> objs;
@@ -68,13 +59,14 @@ void detect(Mat frame, Mat& frame_gray, int flags)
 
     if (flags == DETECTWITHCOLOR)
     {
+        BmwFilter filter(16,16,16);
         for (size_t i = 0; i < objs.size(); ++i)
         {
             // TODO size filter
             if (objs[i].width <= 100)
             {
                 Mat roi(frame, objs[i]);
-                if (checkColor(roi) == 1)
+                if ( filter.filter(roi) )
                 {
                     Point center(objs[i].x + objs[i].width / 2, objs[i].y + objs[i].height / 2);
                     ellipse(frame, center, Size(objs[i].width / 2, objs[i].height / 2),
@@ -99,10 +91,4 @@ void detect(Mat frame, Mat& frame_gray, int flags)
     }
 
     imshow(window_name, frame);
-}
-int getAveLightness(Mat& frame_gray)
-{
-
-
-    return 0;
 }

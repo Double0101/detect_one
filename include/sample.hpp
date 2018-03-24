@@ -1,3 +1,6 @@
+#ifndef DETECT_ONE_SAMPLE_HPP
+#define DETECT_ONE_SAMPLE_HPP
+
 #include <vector>
 #include <string>
 
@@ -14,3 +17,4 @@ private:
 	std::vector<std::vector<int>> m_points;
 };
 
+#endif

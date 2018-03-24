@@ -1,6 +1,6 @@
 find_package ( OpenCV REQUIRED )
 
-set ( APP_SRC objectDetection.cpp )
+set ( APP_SRC objectDetection.cpp ../include/histogram.hpp)
 
 add_subdirectory ( detect )
 add_subdirectory ( detect_train )
