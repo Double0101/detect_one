@@ -18,7 +18,7 @@ const int DETECTWITHCOLOR = 1;
 
 int main(int argc, const char** argv)
 {
-    Mat src = imread( "/Users/Double/Desktop/4272-合影.jpg"/*argv[1]*/, 1 );
+    Mat src = imread( "/Users/Double/workspace/Projects/cheguo/dataset/re/img/2240123209.jpg"/*argv[1]*/, 1 );
     if ( argc > 2 ) { obj_classifier_name = argv[2]; }
     if ( !obj_cascade.load( obj_classifier_name ) ) { printf("--(!)Error loading cascade\n"); return -1; }
 
@@ -57,22 +57,27 @@ void detect(Mat frame, Mat& frame_gray, int flags)
     vector<Rect> objs;
     obj_cascade.detectMultiScale( frame_gray, objs, 1.1, 2, 0|CASCADE_SCALE_IMAGE, Size(30, 30) );
 
-    if (flags == DETECTWITHCOLOR)
-    {
-        BmwFilter filter(16,16,16);
-        for (size_t i = 0; i < objs.size(); ++i)
-        {
+    if (flags == DETECTWITHCOLOR) {
+        BmwFilter filter(16, 16, 16);
+        float target = filter.m_Threshold + 1;
+        int index = 0;
+        for (size_t i = 0; i < objs.size(); ++i) {
             // TODO size filter
             if (objs[i].width <= 100)
             {
                 Mat roi(frame, objs[i]);
-                if ( filter.filter(roi) )
-                {
-                    Point center(objs[i].x + objs[i].width / 2, objs[i].y + objs[i].height / 2);
-                    ellipse(frame, center, Size(objs[i].width / 2, objs[i].height / 2),
-                            0, 0, 360, Scalar(255, 0, 255), 4, 8, 0);
+                float value = filter.filter(roi);
+                if (value < target) {
+                    target = value;
+                    index = i;
                 }
             }
+        }
+        if (target < filter.m_Threshold)
+        {
+            Point center(objs[index].x + objs[index].width / 2, objs[index].y + objs[index].height / 2);
+            ellipse(frame, center, Size(objs[index].width / 2, objs[index].height / 2),
+                    0, 0, 360, Scalar(255, 0, 255), 4, 8, 0);
         }
     }
     else

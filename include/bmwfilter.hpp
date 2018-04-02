@@ -12,7 +12,7 @@
 class BmwFilter : FilterInterface
 {
 public:
-    virtual bool filter(cv::Mat& frame);
+    virtual float filter(cv::Mat& frame);
     BmwFilter(int bbins = 16, int gbins = 16, int rbins = 16) : m_ColHistogram(bbins, gbins, rbins) { };
     float m_Threshold = 2800.f;
 private:

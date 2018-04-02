@@ -10,7 +10,7 @@
 class FilterInterface
 {
 public:
-    virtual bool filter(cv::Mat &frame) = 0;
+    virtual float filter(cv::Mat &frame) = 0;
     virtual ~FilterInterface() { };
     FilterInterface() = default;
 private:
